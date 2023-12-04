@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import CategoriesScreen from "./Screens/CategoriesScreen";
@@ -5,11 +6,12 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import MealsOverviewScreen from "./Screens/MealsOverviewScreen";
 import MealDetailScreen from "./Screens/MealDetailScreen";
+import DrawerNav from "./Components/ui/Navigators/Drawer/DrawerNav";
 
 export default function App() {
 	const Stack = createNativeStackNavigator();
 	return (
-		<View style={styles.container}>
+		<>
 			<NavigationContainer>
 				<Stack.Navigator screenOptions={{
 					headerStyle:{backgroundColor:'#351401'},
@@ -18,9 +20,10 @@ export default function App() {
 				}} initialRouteName='MealCategories'>
 					<Stack.Screen
 						name='MealCategories'
-						component={CategoriesScreen}
+						component={DrawerNav}
 						options={{
-							title: "All Categories",
+							headerShown:false
+						
 						}}
 					/>
 					<Stack.Screen
@@ -37,15 +40,15 @@ export default function App() {
 			</NavigationContainer>
 			{/* <CategoriesScreen /> */}
 			<StatusBar style='light' />
-		</View>
+		</>
 	);
 }
 
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		//  marginVertical: 16,
+// const styles = StyleSheet.create({
+// 	container: {
+// 		flex: 1,
+// 		//  marginVertical: 16,
 
-		backgroundColor: "#24180f",
-	},
-});
+// 		backgroundColor: "#24180f",
+// 	},
+// });

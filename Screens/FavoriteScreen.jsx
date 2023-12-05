@@ -6,11 +6,12 @@ import MealsList from "../Components/ui/MealsList/MealsList";
 
 const FavoriteScreen = () => {
   const { ids } = useContext(FavoritesContext);
+  console.log('ids',ids);
   const favoriteMeals = MEALS.filter((meal) => ids.includes(meal.id));
   if (
     favoriteMeals &&
     Array.isArray(favoriteMeals) &&
-    favoriteMeals.length > 0
+    favoriteMeals.length === 0
   ) {
     return (
       <View style={styles.rootContainer}>

@@ -5,7 +5,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 
 const IconButton = ({ name, size, color, onPress }) => {
 	const handlePressButton = () => {
-        console.log("Pressed");
+      
 		onPress();
 	};
 	return (

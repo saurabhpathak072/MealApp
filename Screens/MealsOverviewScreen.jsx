@@ -1,6 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
 import { useLayoutEffect } from "react";
-import MealItem from "../Components/ui/MealsList/MealItem";
 
 import { CATEGORIES, MEALS } from "../data/dummy-data";
 import MealsList from "../Components/ui/MealsList/MealsList";
